@@ -1,0 +1,18 @@
+export default {
+  morning: "🌞",
+  morningFamely: "👨‍👩‍👧‍👦",
+  dayToday: "💬",
+  holidayList: "🌍",
+  WorldHistory: "🤔📜",
+  angelDay: " 😇",
+  bearthday: "👼",
+  star: "🌟",
+  male: "♂",
+  female: "♀",
+  pray: "🕯",
+  cross: "🙏☦",
+  li: "◾",
+  maleLi: "🔹",
+  femaleLi: "🔸",
+  WorldHistoryLI: "💡",
+};
