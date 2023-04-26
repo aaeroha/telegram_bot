@@ -58,24 +58,28 @@ export default async (html) => {
   });
 
   // * BLOCK  THREE
-  $(".container .list-unstyled")
-    .eq(1)
-    .each((i, el) => {
+  $("h2").each((i, el) => {
+    if ($(el).text() === "День памяти православных святых:") {
       parseObj.blockThree.list += `${$(el)
+        .next()
         .text()
         .split("\n")
-        .map((el) => (el = `${sym.pray}${el.trim()}`))
-        .filter((el) => el != `${sym.pray}`)
+        .map((el) => (el = `${sym.pray} ${el.trim()}`))
+        .filter((el) => el != `${sym.pray} `)
         .map((el) => (el = `${el}\n`))
-        .join("\n")}`;
-    });
+        .join("\n")
+      }`
+      return false;
+    }
+  });
+  console.log(parseObj.blockThree.list);
   $(".container #collapseOne").each((i, el) => {
     parseObj.blockThree.list += `\n${$(el)
       .text()
       .trim()
       .split("\n")
       .filter((el) => el != "")
-      .map((el) => (el = `${sym.pray}${el.trim()}`))
+      .map((el) => (el = `${sym.pray} ${el.trim()}`))
       .map((el) => (el = `${el}\n`))
       .join("\n")}`;
   });
