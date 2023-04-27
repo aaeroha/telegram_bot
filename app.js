@@ -12,7 +12,7 @@ console.log("BOT STARTED >>>>");
 
 setInterval(() => {
   console.log("CHECK INTERVAL >>>>");
-  if (new Date().getHours() == 18) {
+  if (new Date().getHours() == 12) {
     console.log(true);
     let html = getHtml(vars.url);
     parse(html);

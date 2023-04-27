@@ -8,7 +8,7 @@ export default async (html) => {
   const $ = await html;
   // * BLOCK  ONE
   parseObj.lead = `*${$(".lead").text()}* ${sym.dayToday}`;
-  parseObj.blockOne.title = ` *${$(".container .text-center").text()}* ${
+  parseObj.blockOne.title = ` *${$(".container .text-center").eq(1).text()}* ${
     sym.holidayList
   }`;
   $(".list-unstyled span").each((i, el) => {
@@ -67,8 +67,7 @@ export default async (html) => {
         .map((el) => (el = `${sym.pray} ${el.trim()}`))
         .filter((el) => el != `${sym.pray} `)
         .map((el) => (el = `${el}\n`))
-        .join("\n")
-      }`
+        .join("\n")}`;
       return false;
     }
   });
