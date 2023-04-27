@@ -6,26 +6,26 @@ const bot = new TelegramBot(vars.token, { polling: true });
 
 // bot.on("message", (msg) => {
 export default () => {
+  // * GREET:
   setTimeout(() => {
-    // * GREET:
     bot.sendMessage(vars.id, `${parseObj.greetings}`, {
       parse_mode: "Markdown",
     });
   }, 3000);
-  setTimeout(() => {
-    // * TODAY
 
+  // * TODAY
+  setTimeout(() => {
     bot.sendMessage(
       vars.id,
-      `${parseObj.lead}`,
+      `${parseObj.leadText}`,
       {
         parse_mode: "Markdown",
       },
-      4000
+      5000
     );
-    setTimeout(() => {
-      // * BLOCK ONE
 
+    // * BLOCK ONE
+    setTimeout(() => {
       bot.sendMessage(
         vars.id,
         `${parseObj.blockOne.title}\n\n${parseObj.blockOne.list}`,
@@ -33,7 +33,7 @@ export default () => {
           parse_mode: "Markdown",
         }
       );
-    }, 5000);
+    }, 7000);
     setTimeout(() => {
       // * BLOCK TWO
 
@@ -44,8 +44,8 @@ export default () => {
           parse_mode: "Markdown",
         }
       );
-    }, 6000);
-    setTimeout(async () => {
+    }, 9000);
+    setTimeout(() => {
       // * BLOCK THREE
       bot.sendMessage(
         vars.id,
@@ -54,9 +54,10 @@ export default () => {
           parse_mode: "Markdown",
         }
       );
-    }, 7000);
-    setTimeout(async () => {
-      // * BLOCK FOUR
+    }, 11000);
+
+    // * BLOCK FOUR
+    setTimeout(() => {
       bot.sendMessage(
         vars.id,
         `${parseObj.blockFour.title}\n\n${parseObj.blockFour.list}`,
@@ -64,10 +65,10 @@ export default () => {
           parse_mode: "Markdown",
         }
       );
-    }, 8000);
+    }, 13000);
 
-    setTimeout(async () => {
-      // * BLOCK FIVE
+    // * BLOCK FIVE
+    setTimeout(() => {
       bot.sendMessage(
         vars.id,
         `${parseObj.blockFive.title}\n\n${parseObj.blockFive.list}`,
@@ -75,7 +76,7 @@ export default () => {
           parse_mode: "Markdown",
         }
       );
-    }, 9000);
+    }, 15000);
   });
 };
 
