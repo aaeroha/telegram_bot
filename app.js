@@ -5,12 +5,11 @@ import poster from "./functions/poster.js";
 
 console.log("BOT STARTED >>>>");
 
-setInterval(() => {
+setInterval(async () => {
   console.log("CHECK INTERVAL >>>>");
-  if (new Date().getHours() == 18) {
-    console.log(true);
-    let html = getHtml(vars.url);
-    parse(html);
+  if (new Date().getHours() == 08 || new Date().getHours() == 8) {
+    let html = await getHtml(vars.url);
+    await parse(html);
     poster();
   }
-}, 30000);
+}, 15 * 60000);
