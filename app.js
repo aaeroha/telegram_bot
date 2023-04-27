@@ -5,14 +5,9 @@ import poster from "./functions/poster.js";
 
 console.log("BOT STARTED >>>>");
 
-// (async () => {
-//   await parse(html);
-//   console.log("PARSE COMPLETE >>>>");
-// })();
-
 setInterval(() => {
   console.log("CHECK INTERVAL >>>>");
-  if (new Date().getHours() == 12) {
+  if (new Date().getHours() == 18) {
     console.log(true);
     let html = getHtml(vars.url);
     parse(html);
