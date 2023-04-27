@@ -1,13 +1,14 @@
 import sym from "../variables/symbols.js";
 import parseObj from "../variables/parseObj.js";
-import objCleener from "../functions/objCleener.js";
+import objCleener from "./objCleener.js";
 
 export default async (html) => {
   objCleener();
   console.log("PARSE HTML >>>>");
   const $ = await html;
+  parseObj.leadText = `*${$(".lead").text()}* ${sym.dayToday}`;
+
   // * BLOCK  ONE
-  parseObj.lead = `*${$(".lead").text()}* ${sym.dayToday}`;
   parseObj.blockOne.title = ` *${$(".container .text-center").eq(1).text()}* ${
     sym.holidayList
   }`;
@@ -71,7 +72,6 @@ export default async (html) => {
       return false;
     }
   });
-  console.log(parseObj.blockThree.list);
   $(".container #collapseOne").each((i, el) => {
     parseObj.blockThree.list += `\n${$(el)
       .text()
