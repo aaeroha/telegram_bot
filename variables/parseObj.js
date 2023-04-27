@@ -2,7 +2,7 @@ import sym from "./symbols.js";
 
 export default {
   greetings: `*Доброго утрeчка  ${sym.morning}  Династовцы  ${sym.morningFamely}*`,
-  lead: "",
+  leadText: "",
   blockOne: { title: "", list: [] },
   blockTwo: {
     title: "",
