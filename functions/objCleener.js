@@ -3,7 +3,7 @@ import parseObj from "../variables/parseObj.js";
 export default () => {
   console.log("CLEENING OBJ >>>>");
   // * BLOCK  ONE
-  parseObj.lead = "";
+  parseObj.leadText = "";
   parseObj.blockOne.title = "";
 
   parseObj.blockOne.list = "";
